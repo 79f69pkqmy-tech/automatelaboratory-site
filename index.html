@@ -3,361 +3,217 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Automate Laboratory — AI Tools & Automation for Small Business</title>
-  <meta name="description" content="Automate Laboratory helps small business owners discover practical AI tools and automation workflows. Get the Weekly AI Business Digest." />
-  <meta name="robots" content="index,follow" />
-
-  <!-- Social previews (optional but helpful) -->
-  <meta property="og:title" content="Automate Laboratory" />
-  <meta property="og:description" content="Practical AI tools + automation workflows for small business owners. Weekly digest." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://automatelaboratory.com/" />
-
-  <style>
-    :root{
-      --bg: #0b1220;
-      --card: rgba(255,255,255,0.06);
-      --text: #e5e7eb;
-      --muted: rgba(229,231,235,0.78);
-      --muted2: rgba(229,231,235,0.62);
-      --line: rgba(255,255,255,0.10);
-      --primary: #2563eb;
-      --primary2: #1d4ed8;
-      --chip: rgba(37,99,235,0.16);
-      --shadow: 0 10px 30px rgba(0,0,0,0.35);
-      --radius: 14px;
-      --max: 980px;
-    }
-    *{ box-sizing: border-box; }
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: radial-gradient(1200px 600px at 20% -10%, rgba(37,99,235,0.35), transparent 60%),
-                  radial-gradient(900px 500px at 80% 0%, rgba(99,102,241,0.25), transparent 55%),
-                  var(--bg);
-      color: var(--text);
-      line-height: 1.55;
-    }
-    a{ color: inherit; }
-    .wrap{ max-width: var(--max); margin: 0 auto; padding: 26px 18px 54px; }
-    .topbar{
-      display:flex; align-items:center; justify-content:space-between;
-      padding: 10px 0 20px;
-    }
-    .brand{
-      display:flex; gap:10px; align-items:center; text-decoration:none;
-    }
-    .logo{
-      width:34px; height:34px; border-radius:10px;
-      background: linear-gradient(135deg, rgba(37,99,235,1), rgba(99,102,241,1));
-      box-shadow: var(--shadow);
-    }
-    .brand span{
-      font-weight: 800;
-      letter-spacing: 0.2px;
-    }
-    .nav{
-      display:flex; gap:10px; align-items:center;
-      font-size: 14px;
-      color: var(--muted);
-    }
-    .nav a{
-      text-decoration:none;
-      padding: 8px 10px;
-      border: 1px solid transparent;
-      border-radius: 10px;
-    }
-    .nav a:hover{
-      border-color: var(--line);
-      background: rgba(255,255,255,0.03);
-    }
-
-    .hero{
-      padding: 26px 0 12px;
-      display:grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 18px;
-      align-items: stretch;
-    }
-    @media (max-width: 900px){
-      .hero{ grid-template-columns: 1fr; }
-    }
-    .card{
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 22px;
-    }
-    .chip{
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: var(--chip);
-      border: 1px solid rgba(37,99,235,0.35);
-      color: rgba(229,231,235,0.92);
-      font-size: 13px;
-      margin-bottom: 14px;
-    }
-    h1{
-      margin: 0 0 10px;
-      font-size: 38px;
-      line-height: 1.12;
-      letter-spacing: -0.6px;
-    }
-    @media (max-width: 520px){
-      h1{ font-size: 32px; }
-    }
-    .sub{
-      margin: 0 0 18px;
-      color: var(--muted);
-      font-size: 16px;
-      max-width: 62ch;
-    }
-    .ctaRow{
-      display:flex; gap: 12px; flex-wrap: wrap; align-items:center;
-      margin-top: 14px;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding: 12px 16px;
-      border-radius: 12px;
-      text-decoration:none;
-      font-weight: 700;
-      border: 1px solid transparent;
-      cursor:pointer;
-      font-size: 15px;
-    }
-    .btnPrimary{
-      background: var(--primary);
-      color: white;
-      box-shadow: 0 14px 30px rgba(37,99,235,0.25);
-    }
-    .btnPrimary:hover{ background: var(--primary2); }
-    .btnGhost{
-      background: rgba(255,255,255,0.03);
-      border-color: var(--line);
-      color: var(--text);
-    }
-    .btnGhost:hover{ background: rgba(255,255,255,0.06); }
-    .mini{
-      font-size: 13px;
-      color: var(--muted2);
-      margin-top: 10px;
-    }
-
-    .rightCard h2{
-      margin: 0 0 8px;
-      font-size: 16px;
-      letter-spacing: -0.2px;
-    }
-    .rightCard p{
-      margin: 0 0 14px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-    .list{
-      margin: 0;
-      padding-left: 18px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-    .list li{ margin: 8px 0; }
-    .grid3{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 14px;
-    }
-    @media (max-width: 900px){
-      .grid3{ grid-template-columns: 1fr; }
-    }
-    .kicker{
-      font-size: 13px;
-      color: var(--muted2);
-      margin: 0 0 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.10em;
-    }
-    h3{
-      margin: 0 0 8px;
-      font-size: 18px;
-      letter-spacing: -0.2px;
-    }
-    .p{
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-    .divider{
-      height: 1px;
-      background: var(--line);
-      margin: 18px 0;
-    }
-    .footer{
-      margin-top: 24px;
-      color: var(--muted2);
-      font-size: 13px;
-      display:flex;
-      justify-content:space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-      align-items:center;
-    }
-    .footer a{
-      color: var(--muted2);
-      text-decoration:none;
-      border-bottom: 1px dotted rgba(255,255,255,0.28);
-    }
-    .footer a:hover{
-      color: var(--text);
-      border-bottom-color: rgba(229,231,235,0.8);
-    }
-    .mutedBox{
-      background: rgba(255,255,255,0.03);
-      border: 1px dashed rgba(255,255,255,0.12);
-      border-radius: 12px;
-      padding: 12px;
-      margin-top: 14px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-  </style>
+  <title>Automate Laboratory — AI tools & automation for small business owners</title>
+  <meta name="description" content="Practical AI tool reviews and automation playbooks for small business owners. Save time, cut costs, and grow faster with the Weekly AI Business Digest." />
+  <link rel="stylesheet" href="/assets/styles.css" />
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="topbar">
-      <a class="brand" href="/" aria-label="Automate Laboratory">
-        <div class="logo" aria-hidden="true"></div>
-        <span>Automate Laboratory</span>
-      </a>
+  <header class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="brand" href="/">
+          <span class="logo" aria-hidden="true"></span>
+          <span>Automate Laboratory</span>
+        </a>
 
-      <div class="nav">
-        <a href="#what">What you get</a>
-        <a href="#for">Who it’s for</a>
-        <a href="#faq">FAQ</a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="/blog/">Blog</a>
+          <a href="https://shubhams-newsletter-630bbe.beehiiv.com/" target="_blank" rel="noopener">Newsletter</a>
+          <a href="/affiliate-disclosure.html">Disclosure</a>
+          <a href="/privacy.html">Privacy</a>
+        </nav>
+
+        <div class="row">
+          <a class="btn btn-ghost" href="/blog/">Read articles</a>
+          <a class="btn btn-primary" href="https://shubhams-newsletter-630bbe.beehiiv.com/" target="_blank" rel="noopener">Subscribe</a>
+
+          <button class="btn menu-btn" data-menu-btn aria-expanded="false" aria-label="Open menu">
+            Menu
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-menu" data-mobile-menu>
+        <a href="/blog/">Blog</a>
+        <a href="https://shubhams-newsletter-630bbe.beehiiv.com/" target="_blank" rel="noopener">Newsletter</a>
+        <a href="/affiliate-disclosure.html">Disclosure</a>
+        <a href="/privacy.html">Privacy</a>
+        <div class="row">
+          <a class="btn btn-ghost" href="/blog/">Read articles</a>
+          <a class="btn btn-primary" href="https://shubhams-newsletter-630bbe.beehiiv.com/" target="_blank" rel="noopener">Subscribe</a>
+        </div>
       </div>
     </div>
+  </header>
 
+  <main>
     <section class="hero">
-      <div class="card">
-        <div class="chip">⚙️ Practical AI tools • real-world workflows • no hype</div>
-        <h1>AI tools & automation that actually help small businesses.</h1>
-        <p class="sub">
-          Automate Laboratory tests and curates AI tools that save time across marketing, operations,
-          admin, and customer support — with simple workflows you can copy and use.
+      <div class="container hero-grid">
+        <div class="reveal">
+          <span class="chip">Weekly AI Business Digest • No fluff • SMB-first</span>
+          <h1 class="h-title">AI tools & automations that save you hours every week.</h1>
+          <p class="sub">
+            Practical reviews, playbooks, and workflows for small business owners — so you can
+            <strong>cut busywork</strong>, <strong>improve marketing</strong>, and <strong>scale without hiring</strong>.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://shubhams-newsletter-630bbe.beehiiv.com/" target="_blank" rel="noopener">
+              Subscribe free
+            </a>
+            <a class="btn btn-ghost" href="/blog/">Explore the blog</a>
+          </div>
+
+          <div class="hero-note">
+            <span class="chip">⚡ Fast, free, anonymous</span>
+            <span class="chip">🔒 No spam</span>
+            <span class="chip">🧠 Actionable ideas</span>
+          </div>
+        </div>
+
+        <aside class="panel reveal">
+          <h2 style="margin:0 0 6px; font-size:18px;">Start here</h2>
+          <p style="margin:0 0 12px;">
+            Three core guides designed to compound traffic + affiliate earnings over time.
+          </p>
+
+          <div class="kpi">
+            <div class="box">
+              <div class="num">#1</div>
+              <div class="label">Pillar guide</div>
+              <div style="margin-top:8px;">
+                <a href="/blog/best-ai-tools-small-business.html"><strong>Best AI tools for small business owners</strong></a>
+              </div>
+            </div>
+            <div class="box">
+              <div class="num">#2</div>
+              <div class="label">Marketing</div>
+              <div style="margin-top:8px;">
+                <a href="/blog/best-ai-tools-marketing-small-business.html"><strong>AI tools for marketing a small business</strong></a>
+              </div>
+            </div>
+            <div class="box">
+              <div class="num">#3</div>
+              <div class="label">Automation</div>
+              <div style="margin-top:8px;">
+                <a href="/blog/top-ai-automation-tools-small-business.html"><strong>AI automation tools to save time & cut costs</strong></a>
+              </div>
+            </div>
+            <div class="box">
+              <div class="num" style="color:var(--good)">✓</div>
+              <div class="label">New site checklist</div>
+              <div style="margin-top:8px;">
+                <small>GSC verified • sitemap submitted • blog live</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="hr"></div>
+
+          <div class="row">
+            <span class="tag">SEO-ready</span>
+            <span class="tag">Static + fast</span>
+            <span class="tag">Affiliate friendly</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="reveal">What we publish</h2>
+        <p class="lead reveal">
+          Content that helps you make decisions quickly: tool recommendations, workflows, and practical examples.
         </p>
 
-        <div class="ctaRow">
-          <!-- Replace BEEHIIV_URL below -->
-          <a class="btn btnPrimary" href="BEEHIIV_URL" target="_blank" rel="noopener">Subscribe free</a>
-          <a class="btn btnGhost" href="#what">See what you’ll get</a>
+        <div class="grid">
+          <div class="card reveal">
+            <span class="tag">Tool Reviews</span>
+            <h3>What to buy (and what to skip)</h3>
+            <p>Clear pros/cons, who it’s for, and what results to expect — written for small businesses.</p>
+            <div class="meta"><span class="dot"></span><small>Focus: value, not hype</small></div>
+          </div>
+
+          <div class="card reveal">
+            <span class="tag">Automation Playbooks</span>
+            <h3>Save time with repeatable workflows</h3>
+            <p>Simple automations that remove admin and follow-ups — without coding or complex tooling.</p>
+            <div class="meta"><span class="dot"></span><small>Focus: quick wins</small></div>
+          </div>
+
+          <div class="card reveal">
+            <span class="tag">Weekly Digest</span>
+            <h3>One email. Three useful ideas.</h3>
+            <p>Tool of the week, a workflow you can copy, and one practical link to go deeper.</p>
+            <div class="meta"><span class="dot"></span><small>5 minutes to read</small></div>
+          </div>
         </div>
 
-        <div class="mini">Weekly email. Unsubscribe anytime. Zero spam.</div>
-
-        <div class="mutedBox">
-          <strong>Anonymous by design:</strong> this publication is tool-first and workflow-first.
-          No personal brand, no influencer stuff — just useful recommendations.
+        <div class="cta reveal">
+          <div class="split">
+            <div>
+              <h3>Get the Weekly AI Business Digest</h3>
+              <p style="margin:0">
+                Practical AI tools and workflows for small business owners — delivered weekly.
+              </p>
+              <div class="meta" style="margin-top:10px;">
+                <span class="tag">Free</span>
+                <span class="tag">No spam</span>
+                <span class="tag">Unsubscribe anytime</span>
+              </div>
+            </div>
+            <div class="row" style="justify-content:flex-end">
+              <a class="btn btn-primary" href="https://shubhams-newsletter-630bbe.beehiiv.com/" target="_blank" rel="noopener">
+                Subscribe on Beehiiv →
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="card rightCard">
-        <h2>Weekly AI Business Digest</h2>
-        <p>A 5-minute email with:</p>
-        <ul class="list">
-          <li>1–2 best AI tools (with quick pros/cons)</li>
-          <li>1 automation workflow you can apply</li>
-          <li>Templates / prompts when helpful</li>
-          <li>Zero fluff, no “AI will change everything” speeches</li>
-        </ul>
+        <div class="hr"></div>
 
-        <div class="divider"></div>
+        <div class="row reveal">
+          <h2 style="margin:0">Latest guides</h2>
+          <span class="right"></span>
+          <a class="btn btn-ghost" href="/blog/">View all</a>
+        </div>
 
-        <h2>What we cover</h2>
-        <ul class="list">
-          <li>AI tools for marketing & content</li>
-          <li>Automation (Zapier/Make-style workflows)</li>
-          <li>Customer support & admin</li>
-          <li>Operations & productivity</li>
-        </ul>
-      </div>
-    </section>
+        <div class="grid">
+          <a class="card reveal" href="/blog/best-ai-tools-small-business.html">
+            <span class="tag">Pillar</span>
+            <h3>Best AI tools for small business owners (2026)</h3>
+            <p>The practical, no-hype overview to save time and cut costs across marketing, ops, and support.</p>
+            <div class="meta"><span class="dot"></span><small>Updated for 2026</small></div>
+          </a>
 
-    <section id="what" class="grid3">
-      <div class="card">
-        <p class="kicker">Tool reviews</p>
-        <h3>Honest, practical recommendations</h3>
-        <p class="p">Short, decision-friendly reviews — what it’s good for, what it’s not, and who it’s for.</p>
-      </div>
-      <div class="card">
-        <p class="kicker">Workflows</p>
-        <h3>Automation playbooks you can copy</h3>
-        <p class="p">Step-by-step workflows that reduce repetitive work in real small business scenarios.</p>
-      </div>
-      <div class="card">
-        <p class="kicker">Weekly digest</p>
-        <h3>A newsletter built for busy people</h3>
-        <p class="p">One email per week. Quick wins. Minimal reading. Maximum usefulness.</p>
-      </div>
-    </section>
+          <a class="card reveal" href="/blog/best-ai-tools-marketing-small-business.html">
+            <span class="tag">Marketing</span>
+            <h3>Best AI tools for marketing a small business</h3>
+            <p>Content, video, email and engagement tools that are easy to use and built for SMBs.</p>
+            <div class="meta"><span class="dot"></span><small>Buyer-intent guide</small></div>
+          </a>
 
-    <section id="for" class="card" style="margin-top:14px;">
-      <p class="kicker">Who it’s for</p>
-      <h3>Made for non-technical founders and small teams</h3>
-      <p class="p" style="margin-top:8px;">
-        If you run a business and want results without learning code, this is for you.
-        We focus on tools that are easy to adopt and workflows that are realistic.
-      </p>
-      <div class="divider"></div>
-      <p class="p">
-        Examples: solo founders, service businesses, agencies, small e-commerce brands, consultants,
-        and anyone who wants to automate admin tasks.
-      </p>
+          <a class="card reveal" href="/blog/top-ai-automation-tools-small-business.html">
+            <span class="tag">Automation</span>
+            <h3>Top AI automation tools to save time & cut costs</h3>
+            <p>Remove manual busywork with workflows that connect your tools and run in the background.</p>
+            <div class="meta"><span class="dot"></span><small>Highest ROI category</small></div>
+          </a>
+        </div>
 
-      <div class="ctaRow" style="margin-top:16px;">
-        <!-- Replace BEEHIIV_URL below -->
-        <a class="btn btnPrimary" href="https://shubhams-newsletter-630bbe.beehiiv.com/" target="_blank" rel="noopener">Subscribe free</a>
-        <a class="btn btnGhost" href="#faq">Read FAQ</a>
+        <footer class="footer">
+          <div class="row">
+            <span>© <span data-year></span> Automate Laboratory</span>
+            <span class="right"></span>
+            <a href="/privacy.html">Privacy</a>
+            <a href="/affiliate-disclosure.html">Affiliate Disclosure</a>
+          </div>
+        </footer>
       </div>
     </section>
+  </main>
 
-    <section id="faq" class="card" style="margin-top:14px;">
-      <p class="kicker">FAQ</p>
-
-      <h3>Is this free?</h3>
-      <p class="p">Yes — the newsletter is free. Later we may add optional paid resources, but the weekly digest stays free.</p>
-
-      <div class="divider"></div>
-
-      <h3>Do you use affiliate links?</h3>
-      <p class="p">
-        Sometimes. If you buy through a link, we may earn a commission at no extra cost to you. This helps keep the publication running.
-      </p>
-
-      <div class="divider"></div>
-
-      <h3>How often will you email me?</h3>
-      <p class="p">Once per week, typically on the same day each week.</p>
-    </section>
-
-    <div class="footer">
-      <div>© <span id="y"></span> Automate Laboratory</div>
-      <div>
-        <a href="/blog/">Blog</a> ·
-        <a href="/privacy.html">Privacy</a> ·
-        <a href="/affiliate-disclosure.html">Disclosure</a>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+  <script src="/assets/main.js" defer></script>
 </body>
 </html>
